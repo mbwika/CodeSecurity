@@ -1,0 +1,7 @@
+<svg width="220" height="48" viewBox="0 0 220 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="48" height="48" rx="8" fill="#29D6FF"/>
+  <path d="M13 24C13 17.9249 17.9249 13 24 13H35V18H24C20.6863 18 18 20.6863 18 24C18 27.3137 20.6863 30 24 30H35V35H24C17.9249 35 13 30.0751 13 24Z" fill="#06141F"/>
+  <path d="M220 24L212 16V21H186V27H212V32L220 24Z" fill="#A3F07C"/>
+  <text x="58" y="21" fill="#EAF7FF" font-family="Arial, sans-serif" font-size="12" font-weight="700" letter-spacing="0.2px">CODE &amp; SECURITY</text>
+  <text x="58" y="35" fill="#9FC2D7" font-family="Arial, sans-serif" font-size="10" letter-spacing="0.1px">CYBERSECURITY CONSULTING</text>
+</svg>
