@@ -1,25 +1,25 @@
 import { useMemo, useState } from "react";
 
 const sections = [
-  { id: "services", label: "What I Do" },
+  { id: "services", label: "Our Services" },
   { id: "issues", label: "Common Issues" },
   { id: "deliverables", label: "What You Get" },
-  { id: "about", label: "About" },
+  { id: "about", label: "About Us" },
   { id: "contact", label: "Contact" },
 ];
 
 const issues = [
-  "Missing email protections (DMARC, SPF, DKIM): attackers can impersonate your business.",
-  "Employee emails found in data breaches: higher risk of account takeover.",
-  "Website security gaps (SSL issues, misconfigurations): customer trust takes a hit.",
-  "Exposed login portals or test environments: easy entry points for attackers.",
+  { icon: "📧", text: "Missing email protections (DMARC, SPF, DKIM): attackers can impersonate your business." },
+  { icon: "🔓", text: "Employee emails found in data breaches: higher risk of account takeover." },
+  { icon: "🌐", text: "Website security gaps (SSL issues, misconfigurations): customer trust takes a hit." },
+  { icon: "🚪", text: "Exposed login portals or test environments: easy entry points for attackers." },
 ];
 
 const outcomes = [
-  "A simple security report (1-2 pages).",
-  "A risk score with clear explanations.",
-  "Step-by-step recommendations.",
-  "Optional help fixing the issues.",
+  { icon: "📄", text: "A simple security report (1-2 pages)." },
+  { icon: "📊", text: "A risk score with clear explanations." },
+  { icon: "📋", text: "Step-by-step recommendations." },
+  { icon: "🔧", text: "Optional help fixing the issues." },
 ];
 
 function App() {
@@ -116,7 +116,7 @@ function App() {
               />
               <div>
                 <p className="font-display text-xl font-semibold text-white">Code & Security</p>
-                <p className="text-sm text-slate-300">Practical cybersecurity. Clear answers. Real fixes.</p>
+                <p className="text-sm text-slate-300">Protecting Your Digital Assets</p>
               </div>
             </div>
             <nav className="flex flex-wrap gap-2 text-sm">
@@ -135,40 +135,48 @@ function App() {
 
         <main className="mt-8 space-y-8">
           <section className="reveal rounded-lg border border-white/15 bg-ink-800/55 px-6 py-10 shadow-panel backdrop-blur">
-            <p className="font-display text-sm font-semibold uppercase tracking-wide text-brand-lime">
-              Cybersecurity Consulting Website
-            </p>
+            <div className="flex items-center gap-3 mb-4">
+              <span className="text-3xl">🛡️</span>
+              <p className="font-display text-sm font-semibold uppercase tracking-wide text-brand-lime">
+                Cybersecurity Consulting Firm
+              </p>
+            </div>
             <h1 className="mt-3 max-w-3xl font-display text-4xl font-bold leading-tight text-white sm:text-5xl">
               Simple Cybersecurity Checks for Small Businesses
             </h1>
             <p className="mt-5 max-w-2xl text-lg text-slate-200">
-              Know what hackers can see about your business before they do. I help small
+              Know what hackers can see about your business before they do. We help small
               businesses identify and fix common security risks in websites, domains, and
               email systems with no jargon and practical fixes.
             </p>
-            <a
-              href="#contact"
-              className="mt-7 inline-flex rounded-md bg-brand-cyan px-5 py-3 font-semibold text-ink-900 transition hover:bg-cyan-300"
-            >
-              Get a Free Security Check
-            </a>
+            <div className="mt-7 flex flex-col gap-4 sm:flex-row sm:items-center">
+              <a
+                href="#contact"
+                className="inline-flex items-center gap-2 rounded-md bg-brand-cyan px-5 py-3 font-semibold text-ink-900 transition hover:bg-cyan-300"
+              >
+                <span>🔍</span>
+                Get a Free Security Check
+              </a>
+              <span className="text-sm text-slate-300">No cost • No obligation</span>
+            </div>
           </section>
 
           <section id="services" className="reveal rounded-lg border border-white/15 bg-ink-800/55 px-6 py-8 shadow-panel">
-            <h2 className="font-display text-3xl font-bold text-white">What I Do</h2>
+            <h2 className="font-display text-3xl font-bold text-white">Our Services</h2>
             <p className="mt-4 max-w-3xl text-slate-200">
-              I run a focused security check on your online presence and show where your
+              We run a focused security check on your online presence and show where your
               business is exposed, what each risk means, and how to fix it quickly.
               You do not need an IT department or expensive tools, just clarity and the right steps.
             </p>
           </section>
 
           <section id="issues" className="reveal rounded-lg border border-white/15 bg-ink-800/55 px-6 py-8 shadow-panel">
-            <h2 className="font-display text-3xl font-bold text-white">Common Issues I Find</h2>
+            <h2 className="font-display text-3xl font-bold text-white">Common Issues We Find</h2>
             <ul className="mt-5 grid gap-3 text-slate-100">
               {issues.map((item) => (
-                <li key={item} className="rounded-md border border-white/15 bg-ink-900/50 px-4 py-3">
-                  {item}
+                <li key={item.text} className="rounded-md border border-white/15 bg-ink-900/50 px-4 py-3 flex items-start gap-3">
+                  <span className="text-xl mt-0.5">{item.icon}</span>
+                  <span>{item.text}</span>
                 </li>
               ))}
             </ul>
@@ -178,35 +186,52 @@ function App() {
             <h2 className="font-display text-3xl font-bold text-white">What You Get</h2>
             <ul className="mt-5 grid gap-3 text-slate-100 sm:grid-cols-2">
               {outcomes.map((item) => (
-                <li key={item} className="rounded-md border border-white/15 bg-ink-900/50 px-4 py-3">
-                  {item}
+                <li key={item.text} className="rounded-md border border-white/15 bg-ink-900/50 px-4 py-3 flex items-start gap-3">
+                  <span className="text-xl mt-0.5">{item.icon}</span>
+                  <span>{item.text}</span>
                 </li>
               ))}
             </ul>
           </section>
 
           <section className="reveal rounded-lg border border-white/15 bg-ink-800/55 px-6 py-8 shadow-panel">
-            <h2 className="font-display text-3xl font-bold text-white">Why This Matters</h2>
-            <p className="mt-4 max-w-3xl text-slate-200">
-              Cyber incidents do not just affect large companies. Small businesses are often
-              targeted because security is overlooked, systems are misconfigured, and issues go unnoticed.
-              Fixing a few key gaps can significantly reduce risk.
-            </p>
+            <h2 className="font-display text-3xl font-bold text-white">Why Choose Us</h2>
+            <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="rounded-md border border-white/15 bg-ink-900/50 p-4 text-center">
+                <div className="text-3xl mb-3">⚡</div>
+                <h3 className="font-semibold text-white mb-2">Fast Results</h3>
+                <p className="text-sm text-slate-300">Quick security assessments with actionable insights within 48 hours.</p>
+              </div>
+              <div className="rounded-md border border-white/15 bg-ink-900/50 p-4 text-center">
+                <div className="text-3xl mb-3">💼</div>
+                <h3 className="font-semibold text-white mb-2">Business Focused</h3>
+                <p className="text-sm text-slate-300">Practical solutions designed specifically for small business needs.</p>
+              </div>
+              <div className="rounded-md border border-white/15 bg-ink-900/50 p-4 text-center">
+                <div className="text-3xl mb-3">🔒</div>
+                <h3 className="font-semibold text-white mb-2">Expert Security</h3>
+                <p className="text-sm text-slate-300">Certified cybersecurity professionals with real-world experience.</p>
+              </div>
+            </div>
           </section>
 
           <section id="about" className="reveal rounded-lg border border-white/15 bg-ink-800/55 px-6 py-8 shadow-panel">
-            <h2 className="font-display text-3xl font-bold text-white">About</h2>
+            <h2 className="font-display text-3xl font-bold text-white">About Us</h2>
             <p className="mt-4 max-w-3xl text-slate-200">
-              I am Collins Mwange, a cybersecurity-focused software engineer and ISC2 member.
-              I specialize in identifying practical, real-world risks that affect small businesses
-              and helping fix them without unnecessary complexity.
+              We are a team of cybersecurity professionals specializing in practical security solutions for small businesses.
+              With years of experience in software engineering and cybersecurity, we focus on identifying real-world risks
+              that affect businesses and providing clear, actionable fixes without unnecessary complexity.
             </p>
           </section>
 
           <section id="contact" className="reveal rounded-lg border border-white/15 bg-ink-800/55 px-6 py-8 shadow-panel">
-            <h2 className="font-display text-3xl font-bold text-white">Get a Free Security Check</h2>
+            <div className="flex items-center gap-3 mb-4">
+              <span className="text-3xl">📞</span>
+              <h2 className="font-display text-3xl font-bold text-white">Get Your Free Security Assessment</h2>
+            </div>
             <p className="mt-4 max-w-3xl text-slate-200">
-              No cost. No obligation. Fill out the form and I will review your domain or website.
+              No cost. No obligation. Fill out the form and we will review your domain or website
+              and provide you with a comprehensive security report.
             </p>
 
             <form className="mt-6 grid gap-4 sm:grid-cols-2" onSubmit={handleSubmit}>
@@ -302,25 +327,31 @@ function App() {
         </main>
 
         <footer className="mt-8 reveal rounded-lg border border-white/15 bg-ink-900/55 px-6 py-6 text-sm text-slate-300">
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-            <p>Code & Security</p>
+          <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex flex-col gap-2">
+              <p className="font-semibold text-white">Code & Security</p>
+              <p className="text-xs">Professional Cybersecurity Consulting</p>
+            </div>
             <div className="flex flex-wrap items-center gap-4">
-              <a className="hover:text-brand-cyan" href={social.linkedin} target="_blank" rel="noreferrer">
+              <a className="hover:text-brand-cyan transition-colors" href={social.linkedin} target="_blank" rel="noreferrer">
                 LinkedIn
               </a>
-              <a className="hover:text-brand-cyan" href={social.x} target="_blank" rel="noreferrer">
+              <a className="hover:text-brand-cyan transition-colors" href={social.x} target="_blank" rel="noreferrer">
                 X
               </a>
-              <a className="hover:text-brand-cyan" href={social.github} target="_blank" rel="noreferrer">
+              <a className="hover:text-brand-cyan transition-colors" href={social.github} target="_blank" rel="noreferrer">
                 GitHub
               </a>
-              <a className="hover:text-brand-cyan" href="/privacy-policy.html">
+              <a className="hover:text-brand-cyan transition-colors" href="/privacy-policy.html">
                 Privacy Policy
               </a>
-              <a className="hover:text-brand-cyan" href="/terms.html">
+              <a className="hover:text-brand-cyan transition-colors" href="/terms.html">
                 Terms
               </a>
             </div>
+          </div>
+          <div className="mt-6 pt-4 border-t border-white/10 text-center text-xs">
+            <p>&copy; {new Date().getFullYear()} Code & Security. All rights reserved.</p>
           </div>
         </footer>
       </div>

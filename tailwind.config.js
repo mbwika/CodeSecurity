@@ -11,8 +11,8 @@ export default {
         "brand-amber": "#ffb347",
       },
       fontFamily: {
-        display: ["'Space Grotesk'", "sans-serif"],
-        body: ["'IBM Plex Sans'", "sans-serif"],
+        display: ["'Inter'", "sans-serif"],
+        body: ["'Inter'", "sans-serif"],
       },
       boxShadow: {
         panel: "0 20px 40px -28px rgba(6, 20, 31, 0.7)",
